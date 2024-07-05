@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clicker Game</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div id="background"></div>
+    <div id="game">
+        <div id="scoreboard">
+            <p>Бали: <span id="score">0</span></p>
+        </div>
+        <div id="clickArea">
+            <img id="clickImage" src="{{ url_for('static', filename='images/CHNU.webp') }}" alt="Click me!">
+            <p id="clickFeedback">+1</p>
+            <p>Очки: <span id="points">0</span></p>
+        </div>
+        <div id="improvementsMenu">
+            <button id="improvementsButton">Покращення</button>
+            <div id="improvementsDropdown" class="dropdown-content">
+                <button id="exchangePoints">Обміняти 1000 очок на 0.005 балів</button>
+                <button id="exchangeClicks">Обміняти 10000 очок на +1 клік</button>
+            </div>
+        </div>
+        <div>
+            <label for="telegramId">Telegram ID:</label>
+            <input type="text" id="telegramId" name="telegramId">
+            <button onclick="loadUserData()">Завантажити дані</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/game.js') }}"></script>
+</body>
+</html>
